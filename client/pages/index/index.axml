@@ -1,0 +1,7 @@
+<view class="tab">
+<flex wrap="wrap">
+    <view class="placeholder inline" >推荐</view>
+    <view class="placeholder inline" >表白</view>
+    <view class="placeholder inline" >失物招领</view>
+</flex>
+<view/>
