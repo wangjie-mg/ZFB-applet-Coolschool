@@ -1,0 +1,18 @@
+<view style="margin:10px 5px 0 5px">
+  <input data-field="inputtitle" placeholder-class="color" style="width:90vw;border-bottom:1px solid #5C93FF;" value="{{inputtitle}}" class="input"  onInput="onItemInput" placeholder="活动标题" />    
+  <textarea data-field="inputvalue" placeholder-class="color" style="margin-top:5vh" value="{{inputvalue}}" maxlength="-1" onInput="onItemInput" auto-height placeholder="活动内容" />
+</view>
+<view class="index-page flex">
+  <view a:for="{{imgs}}" a:for-index="idx" class="box">
+    <image class="remove" data-value="{{idx}}" data-src="{{item}}" onTap="onRemove" src="../../img/remove.png" />
+    <image onTap="onImg" data-value="{{item}}" mode="aspectFill" class="img" src="{{item}}"/>
+  </view>
+  <view class="box flex-center">
+    <view onTap="attach" class="flex-center-column">
+      <image class="add" mode="scaleToFill" src="../../img/add.png"/>
+    </view>
+  </view>
+  <button onTap="submit" class="submit" type="primary">发表</button>
+</view>
+<modal show="{{isOpenModal}}" onModalClose="onModalClose" topImage="{{url}}" advice="{{true}}" topImageSize="lg" closeType="1">
+</modal>

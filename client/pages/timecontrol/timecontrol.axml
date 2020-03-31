@@ -1,0 +1,38 @@
+<view class="top">
+  <view class="top-t"> 课表</view>
+  <view class="top-s" onTap="onslect">重置</view>
+</view>
+<view class="hang">
+  <view>周一</view>
+  <view>周二</view>
+  <view>周三</view>
+  <view>周四</view>
+  <view>周五</view>
+</view>
+<view class="lie"> 
+ <view>1</view>
+ <view>2</view>
+ <view>3</view>
+ <view>4</view>
+ <view>5</view>
+ <view>6</view>
+ <view>7</view>
+ <view>8</view>
+ <view>9</view>
+ <view>10</view>
+ <view>11</view>
+ <view>12</view>
+</view>
+<view class="main">
+  <view a:for='{{tagData}}' class="main-box">
+    <view class="box-inline"></view>
+    <view class="box-value" a:if="{{item.flag}}" style="background:{{color[item.color]}}">
+      <view class="box-wz">  
+        <view> {{item.name}} </view>
+        <view> {{item.place}} </view>
+        <view> {{item.pop}} </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="add" onTap="skip"> </view>

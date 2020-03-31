@@ -1,0 +1,26 @@
+<view style="margin:0 5px 0 5px">
+<view style="margin:2vh 0 2vh 0" >
+  <radio-group class="radio-group" onChange="radioChange" name="lib" a:if="{{id === '0'}}">
+    <label class="radio" a:for="{{items}}" key="label-{{index}}">
+      <am-radio value="{{item.value}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+      <view style="display:inline-block;">{{item.desc}}</view>
+    </label>
+  </radio-group>
+  </view>
+  <input data-field="inputtitle" placeholder-class="color" style="width:90vw;border-bottom:1px solid #5C93FF;" value="{{inputtitle}}" class="input" maxlength="20" onInput="onItemInput" placeholder="{{value[id].title}}" />    
+  <textarea data-field="inputvalue" placeholder-class="color" style="margin-top:5vh" value="{{inputvalue}}" onInput="onItemInput" auto-height placeholder="{{value[id].con}}" />
+</view>
+<view class="index-page flex">
+  <view a:for="{{imgs}}" a:for-index="idx" class="box">
+    <image class="remove" data-value="{{idx}}" data-src="{{item}}" onTap="onRemove" src="../../img/remove.png" />
+    <image onTap="onImg" data-value="{{item}}" mode="aspectFill" class="img" src="{{item}}"/>
+  </view>
+  <view class="box flex-center">
+    <view onTap="attach" class="flex-center-column">
+      <image class="add" mode="scaleToFill" src="../../img/add.png"/>
+    </view>
+  </view>
+  <button onTap="submit" class="submit" type="primary">发表</button>
+</view>
+<modal show="{{isOpenModal}}" onModalClose="onModalClose" topImage="{{url}}" advice="{{true}}" topImageSize="lg" closeType="1">
+</modal>

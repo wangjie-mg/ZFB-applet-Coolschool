@@ -1,0 +1,22 @@
+<view a:for="{{write}}" a:for-index="idx" class="box" >
+<view data-id="{{item._id}}" onTap="onskip"> 
+    <avatar name="{{item.name}}" desc="{{item.time}}" size="md" src="{{item.ava}}"/>
+    <view class="text1">{{item.title}}</view>
+    <text class="text-value" number-of-lines="3">{{item.details}}</text>
+    <flex align="start" >
+      <view a:for="{{item.urls}}"  a:if="{{index<3}}">
+        <image  class="imga" src="{{item}}"/>          
+      </view>
+    </flex>
+</view>
+    <flex justify="end">
+      <view class="gn-box " data-id="{{item._id}}" data-num="{{item.good}}" data-index="{{idx}}" onTap="good">
+        <image mode="scaleToFill" src="../../img/zan.png" class="icona"/>
+        <text class="tex" >{{item.good}}</text>
+      </view>
+      <view class="gn-box" >
+        <image mode="scaleToFill" src="../../img/pl.png" class="icona"/>
+        <text class="tex">{{item.comment}}</text>
+      <view>
+    </flex>
+</view>

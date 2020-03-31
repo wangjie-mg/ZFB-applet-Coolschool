@@ -1,3 +1,45 @@
-<view>
-  New Page
+<view class="top">
+<view class="pic-main">
+  <image class="pic" src="{{user.ava}}"/></view>
+    
+  <view class="name">{{user.name}} <image style="margin:15rpx 0 0 20rpx;width:15px;height:15px;transform: translateY(5rpx);" src="{{sex_img}}"/> </view>
 </view>
+</view>
+<view class="context">
+   
+   <view class="header"> 
+      <view class="header-main">个人信息</view>
+      <view class="header-right">
+         <button onTap="onTest" type="text" shape="defauty">编辑</button>
+      </view>
+   </view>
+   <view class="item">
+   <view class="item-a">
+      <text class="item-title " decode="{{true}}">姓名&emsp;</text> 
+      <view class="item-con">{{user.name}}</view>
+   </view>
+   <view class="item-a">
+      <text class="item-title" decode="{{true}}">性别&emsp;</text> 
+      <view class="item-con">{{user.sex}}</view>
+   </view>
+    <view class="item-a">
+      <text class="item-title" decode="{{true}}">学号&emsp;</text> 
+      <view class="item-con">{{user.studentid}}</view>
+   </view>
+   
+   <view class="item-a">
+      <text class="item-title" decode="{{true}}">院系&emsp;</text> 
+      <view class="item-con">{{user.college}}</view>
+   </view>
+   <view class="item-a">
+      <view class="item-title">手机号</view> 
+      <view class="item-con">{{user.telephone}}</view>
+   </view>
+    </view>
+   </view>
+<view class="header" onTap="skip">
+   <view class="header-main">日程管理</view>
+   <view class="header-right">
+      <image mode="scaleToFill" style="width:24px;height:24px;" src="../../img/jianto.png"/>
+   </view>
+</view> 

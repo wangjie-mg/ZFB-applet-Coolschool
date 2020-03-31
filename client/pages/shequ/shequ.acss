@@ -1,0 +1,119 @@
+.titleBar {
+  background-color: #014A96;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.placeholder {
+ color: #fff;
+ text-align: center;
+ height: 30px;
+ margin: 0 10px 0 10px;
+ line-height: 30px;
+}
+.inline {
+ background: white;
+ width: 40%;
+ height: 2.5px;
+ margin: 0 auto; 
+ border-radius:2.5px; 
+}
+.right{
+  flex-grow: 1;
+}
+.img{
+  position: relative;
+  left: 100%;
+  margin-left: -40px;
+  width: 20px;
+  height:20px;
+}
+.text{
+  width:35vw;
+  font-size:0.9em; 
+}
+.am-popover-item-wrapper{
+  padding-right:0px; 
+}
+.footer{
+  position: relative;
+  text-align: center;
+  height: 115rpx;
+  line-height: 60rpx;
+  background: white;
+}
+.schedule-scroll {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.spinner {
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner .bounce {
+  margin-top: 20rpx;
+  width: 13rpx;
+  height: 21rpx;
+  display: inline-block;
+  animation-fill-mode: both;
+  margin-left: 13rpx;
+  transform: skewX(-15deg);
+}
+.spinner .bounce1 {
+  background: #108EE9;
+  animation: bouncedelay1 2.1s infinite linear;
+}
+.spinner .bounce2 {
+  background: #9DCDEF;
+  animation: bouncedelay2 2.1s infinite linear;
+}
+.spinner .bounce3 {
+  background: #EAECF3;
+  animation: bouncedelay3 2.1s infinite linear;
+}
+.spinner .spinner-word {
+  margin-top: 24rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+}
+@keyframes bouncedelay1 {
+  0% {
+    background: #108EE9;
+  }
+  50% {
+    background: #9DCDEF;
+  }
+  100% {
+    background: #EAECF3;
+  }
+}
+@keyframes bouncedelay2 {
+  0% {
+    background: #9DCDEF;
+  }
+  50% {
+    background: #EAECF3;
+  }
+  100% {
+    background: #108EE9;
+  }
+}
+@keyframes bouncedelay3 {
+  0% {
+    background: #EAECF3;
+  }
+  50% {
+    background: #108EE9;
+  }
+  100% {
+    background: #9DCDEF;
+  }
+}

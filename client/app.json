@@ -1,12 +1,23 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/add/add",
-    "pages/wode/wode"
+    "pages/shequ/shequ",
+    "pages/wode/wode",
+    "pages/userupdate/userupdate",
+    "pages/postmessage/postmessage",
+    "pages/write/write",
+    "pages/message/message",
+    "pages/timecontrol/timecontrol",
+    "pages/timeadd/timeadd",
+    "pages/active/active",
+    "pages/activeadd/activeadd",
+    "pages/activevalue/activevalue"
   ],
   "window": {
-    "defaultTitle": "创校园",
-    "titleBarColor":"#014A96"
+    "defaultTitle": "Cool校园",
+    "titleBarColor": "#014A96",
+    "transparentTitle": "none",
+    "allowsBounceVertical": "NO"
   },
   "tabBar": {
     "textColor": "#cccccc",
@@ -17,21 +28,20 @@
         "pagePath": "pages/index/index",
         "name": "首页",
         "icon": "img/index1.png",
-        "activeIcon":"img/index.png"
-      },{
-        "pagePath": "pages/add/add",
-        "icon":"img/tianjia.png",
-        "activeIcon":"img/tianjia1.png",
-        "name":"发布"
-        
+        "activeIcon": "img/index.png"
+      },
+      {
+        "pagePath": "pages/shequ/shequ",
+        "icon": "img/shequ1.png",
+        "activeIcon": "img/shequ.png",
+        "name": "社区"
       },
       {
         "pagePath": "pages/wode/wode",
         "name": "我的",
         "icon": "img/wode1.png",
-        "activeIcon":"img/wode.png"
+        "activeIcon": "img/wode.png"
       }
     ]
   }
-  
 }

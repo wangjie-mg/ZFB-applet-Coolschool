@@ -1,0 +1,14 @@
+<view style="margin:5vw">
+  <view class="va-title">{{value.title}}</view>
+  <text class="va-va"> {{value.details}}</text>
+  <view class="index-page">
+      <view a:for="{{value.urls}}" class="boxa">
+        <image onTap="onImg" data-value="{{item}}" class="img" src="{{item}}"/>          
+      </view>
+  </view>
+  <view class="va-time">{{value.time}}</view>
+
+</view>
+
+<modal show="{{isOpenModal}}" onModalClose="onModalClose" topImage="{{url}}" advice="{{true}}" topImageSize="lg" closeType="1">
+</modal>

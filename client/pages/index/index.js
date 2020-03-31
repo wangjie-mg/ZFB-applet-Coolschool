@@ -1,35 +1,79 @@
+const app=getApp();
+
 Page({
-  onLoad(query) {
-    // 页面加载
-    console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+  data:{
+    writea:[],
+    writeb:[],
+    user:null,
+    new:true,
+
+    img:[],
+    indicatorDots: true,
+    autoplay: true,
+    vertical: false,
+    interval: 2500,
+    circular: false,
+    duration:1500,
   },
-  onReady() {
-    // 页面加载完成
+  onLoad(query) {
+    if(app.userId===null){
+      app.login();
+    }
+  },
+  skipa(){
+    my.navigateTo({url:"../message/message?type=1"})
+  },
+  skipb(){
+    my.navigateTo({url:"../message/message?type=2"})
   },
   onShow() {
-    // 页面显示
+    this.setData({
+      img:[]
+    })
+    app.mpServerless.db.collection('active').find({},{
+      limit:4,
+      sort:{
+        _id:-1
+      }
+    }).then(res =>{
+        const img=this.data.img;
+        res.result.map(item=>{
+          const obj={
+            url:item.urls[0],
+            title:item.title
+          }
+          img.push(obj)
+        })
+        this.setData({
+          img
+        })
+    })
+
+    app.mpServerless.db.collection('write').find({
+      type:'1'
+    },{
+      limit:1,
+      sort:{_id:-1}
+    }).then(res=>{
+      this.setData({
+        writea:res.result
+      })
+    })
+    app.mpServerless.db.collection('write').find({
+      type:'2'
+    },{
+      limit:1,
+      sort:{_id:-1}
+    }).then(res=>{
+      this.setData({
+        writeb:res.result
+      })
+    })
   },
-  onHide() {
-    // 页面隐藏
-  },
-  onUnload() {
-    // 页面被关闭
-  },
-  onTitleClick() {
-    // 标题被点击
-  },
-  onPullDownRefresh() {
-    // 页面被下拉
-  },
-  onReachBottom() {
-    // 页面被拉到底部
-  },
-  onShareAppMessage() {
-    // 返回自定义分享信息
-    return {
-      title: 'My App',
-      desc: 'My App description',
-      path: 'pages/index/index',
-    };
-  },
+  
+    onskip(){
+      my.navigateTo({
+        url: '../../pages/active/active'
+      });
+    }
 });

@@ -1,0 +1,16 @@
+<view class="ac-top">  
+  <view class="ac-left"> 活动</view>
+  <view class="ac-right" onTap="onskip">发布活动</view>
+</view>
+
+<view a:for="{{value}}" data-id="{{item._id}}" onTap="onskipvalue" class="active">
+<view class="active-item" >
+  <image mode="scaleToFill" src="{{item.urls[0]}}"/>
+  <view class="active-title">
+    {{item.title}}
+  </view>
+<view class="active-time"> 
+{{item.time}}
+</view>
+</view>
+</view>

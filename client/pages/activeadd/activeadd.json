@@ -1,0 +1,6 @@
+{
+     "usingComponents":{
+    "modal": "mini-ali-ui/es/modal/index",
+    "am-radio": "mini-ali-ui/es/am-radio/index"
+  }
+}

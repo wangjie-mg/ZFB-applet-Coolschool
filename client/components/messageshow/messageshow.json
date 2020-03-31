@@ -1,7 +1,8 @@
 {
+  "component": true,
   "usingComponents": {
     "avatar": "mini-ali-ui/es/avatar/index",
     "flex": "mini-ali-ui/es/flex/index",
-    "messageshow":"../../components/messageshow/messageshow"
+    "messageshow":"../messageshow/messageshow"
   }
 }

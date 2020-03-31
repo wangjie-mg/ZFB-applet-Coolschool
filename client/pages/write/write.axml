@@ -1,0 +1,52 @@
+<view class="box" >
+<view data-id="{{value._id}}" onTap="{{onskip}}"> 
+    <avatar name="{{value.name}}" desc="{{value.time}}" size="md" src="{{value.ava}}"/>
+    <view class="text1">{{value.title}}</view>
+    <text class="text-value">{{value.details}}</text>
+    <view class="index-page">
+      <view a:for="{{value.urls}}" class="boxa">
+        <image onTap="onImg" data-value="{{item}}" class="img" src="{{item}}"/>          
+      </view>
+    </view>
+    <flex justify="end">
+      <view class="gn-box " data-id="{{value._id}}" data-num="{{value.good}}" data-type="2" onTap="good">
+        <image mode="scaleToFill" src="../../img/zan.png" class="icona"/>
+        <text class="tex" >{{value.good}}</text>
+      </view>
+    </flex>
+</view>
+</view> 
+
+<view> 
+  <view class="pl-title">
+    评论(<text >{{value.comment}}</text>)
+  </view>
+
+  <view a:for="{{comment}}" a:for-index="idx" class="pl-box" >
+    <view class="pl-main">
+      <avatar name="{{item.name}}" desc="{{item.time}}" size="md" src="{{item.ava}}" />
+      <view data-id="{{idx}}"   class="input-ff" onTap="onff" >回复</view>
+    </view>
+    <view class="wr-text text1">{{item.value}}</view>  
+    <view class="tw">
+      <view a:for="{{item.twmsg}}">
+        <text class="tw-n" decode="true">&emsp;{{item.name}}:&emsp;</text> <text class="tw-v">{{item.value}}</text>
+      </view>
+    </view>  
+  </view>  
+  
+  <view style="width:100%;height:20vh">
+    
+  </view>
+</view>
+
+<view class="input-main">
+<view class="input-pl"> 
+    <textarea focus="{{focus}}" show-count="{{false}}"  data-field="plmsg" class="input" value="{{plmsg}}" onInput="onItemInput" placeholder="{{place}}" />
+  <button a:if="{{flag}}" type="text" class="input-x" onTap="outff" >取消回复</button>
+  <button type="text" class="input-text" onTap="onsubmit" >发表</button>
+</view>
+</view>
+
+<modal show="{{isOpenModal}}" onModalClose="onModalClose" topImage="{{url}}" advice="{{true}}" topImageSize="lg" closeType="1">
+</modal>

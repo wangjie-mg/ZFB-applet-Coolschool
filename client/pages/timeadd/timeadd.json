@@ -1,0 +1,8 @@
+{
+    "defaultTitle": "添加课程",
+    "usingComponents": {
+    "list": "mini-ali-ui/es/list/index",
+    "picker-item": "mini-ali-ui/es/picker-item/index",
+  "input-item": "mini-ali-ui/es/input-item/index"
+  }
+}

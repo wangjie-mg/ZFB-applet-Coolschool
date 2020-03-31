@@ -1,7 +1,49 @@
-<view class="tab">
-<flex wrap="wrap">
-    <view class="placeholder inline" >推荐</view>
-    <view class="placeholder inline" >表白</view>
-    <view class="placeholder inline" >失物招领</view>
-</flex>
-<view/>
+    <view class="back"></view>
+<view class="swiper-container">
+  <swiper 
+    indicator-dots="{{indicatorDots}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}" 
+    circular="{{circular}}"
+    class="swiper" 
+    autoplay="{{autoplay}}">
+    <block a:for="{{img}}">
+      <swiper-item>
+        <image src="{{item.url}}"  class="img" />
+      </swiper-item>
+    </block>
+  </swiper>
+<view class="sw-top"> 
+  <swiper 
+    interval="{{interval}}" 
+    duration="{{duration}}" 
+    circular="{{circular}}"
+    vertical="true"
+    class="img-title" 
+    autoplay="{{autoplay}}">
+    <block a:for="{{img}}">
+      <swiper-item>
+        <view class="title">{{item.title}} </view>
+      </swiper-item>
+    </block>
+  </swiper>
+    <view class="sw-right" onTap="onskip"> 
+      查看更多活动...
+    </view>
+  </view>
+</view>
+
+    <view style="padding:0 40rpx 0 40rpx;border-bottom: 2px solid #fafafa;"> 
+        <flex justify="between"  >
+            <view class="top">表白墙</view>
+            <view class="top top-right" onTap="skipa">更多...</view>
+        </flex>
+    </view>
+<messageshow write="{{writea}}" />
+<view style="padding:0 40rpx 0 40rpx;border-bottom: 2px solid #fafafa;"> 
+        <flex justify="between"  >
+            <view class="top">失物招领</view>
+            <view class="top top-right" onTap="skipb">更多...</view>
+        </flex>
+</view>
+<messageshow write="{{writeb}}" />

@@ -1,0 +1,10 @@
+{   
+    "defaultTitle": "详情",
+    "usingComponents": {
+    "avatar": "mini-ali-ui/es/avatar/index",
+    "flex": "mini-ali-ui/es/flex/index",
+    "modal": "mini-ali-ui/es/modal/index",
+    "button": "mini-ali-ui/es/button/index",
+    "multi-liner": "mini-ali-ui/es/multi-liner/index"
+  }
+}

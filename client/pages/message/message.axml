@@ -1,0 +1,39 @@
+<view class="msg-top"> 
+<view class="msg-left">
+  {{flag==='1' ?"表白墙":"失物招领"}}
+</view>
+<view class="right">
+  <popover
+  position="{{bottomRight}}"
+  show="{{nshow}}"
+  showMask="{{false}}"
+  onMaskClick="onMaskClick"
+  >
+  <view onTap="onShowPopoverTap"> <image class="img" src="../../img/tianjia.png"/> </view>
+  <view slot="items">
+    <popover-item onItemClick="itemTap1">
+      <text class="text" decode="{{true}}"><image style="width:13.5px;height:13.5px" src="../../img/bianji.png"/>&emsp;发帖</text>
+    </popover-item>
+    <popover-item onItemClick="itemTap2">
+      <text class="text" decode="{{true}}"><image style="width:16px;height:16px" src="../../img/love.png"/>&emsp;发表白</text>
+    </popover-item>
+    <popover-item onItemClick="itemTap3">
+      <text class="text" decode="{{true}}"><image style="width:16px;height:16px" src="../../img/wp.png"/>&emsp;发失物招领</text>
+    </popover-item>
+  </view>
+  </popover>  
+</view>
+</view>
+
+<view class="schedule-container">
+    <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+      <messageshow write="{{write}}" />
+        <view class="spinner" style="{{show ? '' : 'display:none'}}">
+          <view class="bounce1 bounce"></view>
+          <view class="bounce2 bounce"></view>
+          <view class="bounce3 bounce"></view>
+          <view style="margin:20rpx 0 0 20rpx;color:#666666;">加载中...</view>
+        </view>
+      <view a:if="{{fshow}}" class="footer" > 不好意思，已经到底了！！！</view>
+  </scroll-view>
+</view>

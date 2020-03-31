@@ -1,0 +1,41 @@
+<view style="padding:3vw">
+<list>
+  <input-item data-field="name" 
+      placeholder="线性代数" 
+      type="text" 
+      value="{{name}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">课程名称</input-item>
+      <input-item data-field="pop" 
+      placeholder="刘教授" 
+      type="text" 
+      value="{{pop}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">任课老师</input-item>
+      <input-item data-field="place" 
+      placeholder="FZ612" 
+      type="text" 
+      value="{{place}}" 
+      clear="{{true}}" 
+      onInput="onItemInput" 
+      onClear="onClear">任课地点</input-item>
+      <view style="height:1vh;background:#fafafa;"> </view>
+      <picker-item
+      data-field="week"
+      value="{{week}}"
+      onPickerTap="onPickerTapa"
+    >
+      周数
+    </picker-item>
+    <picker-item
+      data-field="time"
+      value="{{time}}"
+      onPickerTap="onPickerTapb"
+    >
+      时间
+    </picker-item>
+    <button type="primary" onTap="onsubmit">保存</button>
+  </list>
+</view>

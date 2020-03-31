@@ -1,0 +1,64 @@
+<view> 
+<form onSubmit="onSubmit" onReset="onReset">
+  <list>
+    <input-item data-field="studentid" 
+      placeholder="{{user.studentid}}" 
+      type="text" 
+      onInput="onItemInput"
+      onClear="onClear"
+      name="studentid"
+    >学号</input-item>
+    <radio-group onChange="radioChange" name="sex">
+    <view class="rga"> 
+      <view class="rg">
+      <view class="radio-group-title">性别</view>
+      <view class="rg-right">
+        <label class="radio"  key="label-{{index}}">
+          <radio value="男" checked="{{rc1}}" />
+          <text class="radio-text" >男</text>
+        </label>
+        <label class="radio"  key="label-{{index}}">
+          <radio value="女" checked="{{rc2}}" />
+          <text class="radio-text" >女</text>
+        </label>
+      </view>
+      </view>
+      </view>
+    </radio-group>
+  <input-item data-field="college" 
+      placeholder="{{user.college}}" 
+      type="text" 
+      name="college"
+      onInput="onItemInput"
+      >学院专业</input-item>
+  
+  <input-item data-field="telephone" 
+      placeholder="{{user.telephone}}" 
+      type="text" 
+      name="telephone"
+      onInput="onItemInput"
+      >手机号</input-item>
+  <view class="container">
+   <button type="ghost" onTap="openModal">保存</button>
+  </view>
+  
+  <modal
+		show="{{modalOpened}}"
+    showClose="{{false}}"
+	>
+		抱歉，您未修改任何信息。
+    <view slot="footer" onTap="onButtonClick">我知道了</view>
+	</modal>
+  
+  <modal
+		show="{{modalOpened5}}"
+    showClose="{{false}}"
+    onButtonClick="onButtonClick5"
+    buttons="{{buttons5}}"
+	>
+		是否保存当前信息。
+	</modal>
+</view>
+  </list>
+  </from>
+</view>

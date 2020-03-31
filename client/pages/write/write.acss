@@ -1,0 +1,134 @@
+.box{
+    padding: 40rpx 40rpx 0 40rpx;
+    border-bottom: 1vh solid #FAFAFA;
+}
+.text1{
+    margin: 2vh 0 2vh 0;
+    width: 100%;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 36rpx;
+    font-weight: 600;
+}
+.text-value{
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 2vh;
+}
+.am-avatar-img-md{
+    width: 70rpx;
+    height:70rpx;
+}
+.am-avatar-name-md,.am-avatar-desc-md{
+    font-size:0.75em
+}
+.tex{
+    color: #8a8a8a;
+    width: 10px;
+    margin: 5px;
+}
+.gn-box{
+    width: 13vw;
+    height: 7vh;
+    line-height: 7vh;
+}
+.icona{
+    width: 13px;
+    height:13px;
+}
+
+.index-page {
+  display: flex;
+  flex-wrap:wrap;
+	align-content:flex-start;
+  background-color: white;
+}
+.boxa {
+  margin-top: 30rpx;
+  height: 200rpx;
+  width: 200rpx;
+  background: #eee;
+  margin-left: 20rpx;
+  position: relative;
+}
+.img {
+  margin: 5rpx;
+  height: 190rpx;
+  width: 190rpx;
+}
+.am-modal-body {
+  display: none;
+}
+.am-modal, .am-modal-image-lg image {
+  width: 500rpx;
+  height: 600rpx;
+  background-size: cover !important;
+  background-position: center center;
+}
+.pl-title{
+  font-size: 1.2em;
+  margin: 3vw 0 0 3vw;
+}
+.wr-text{
+  font-weight: 400;
+  margin-left:2vw; 
+}
+.input-main{
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+  width: 100vw;
+  border-top: 1px solid #f9f9f9;
+}
+.input-pl{
+  align-items: center;
+  display: flex;
+  justify-content:flex-end;
+  width: 100%;
+  margin:2vw 0 2vw 0 ; 
+}
+.input{
+  width:100%;
+  margin: 0 0 0 4vw;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+.input-x{
+  font-size: 1em;
+  margin: 0 2vw 0 4vw;
+  width: 39vw;
+}
+.input-ff{
+  width: 20vw;
+}
+.input-text{
+  font-size: 1em;
+  margin: 0 4vw 0 4vw;
+  width: 18vw;
+}
+.pl-main{
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+}
+.pl-box{
+  padding: 40rpx 40rpx 0 40rpx;
+}
+.am-avatar{
+  width: 100%;
+}
+.input-ff{
+  font-size: 0.9em;
+  color: #ccc;
+}
+.tw{
+  background: #f1f1f1;
+  border-radius: 5px;
+  margin-left: 5vw;
+  font-size: 0.9em
+}
+.tw-n{
+  color: #5C93FF;
+  height:60rpx;
+  line-height: 60rpx;
+}
