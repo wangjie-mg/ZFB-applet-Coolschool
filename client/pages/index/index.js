@@ -20,6 +20,13 @@ Page({
       app.login();
     }
   },
+  onPullDownRefresh() {
+    if(app.userId===null){
+      app.login();
+    }
+    this.chushi();
+    my.stopPullDownRefresh()
+  },
   skipa(){
     my.navigateTo({url:"../message/message?type=1"})
   },
@@ -27,7 +34,10 @@ Page({
     my.navigateTo({url:"../message/message?type=2"})
   },
   onShow() {
-    this.setData({
+    this.chushi()
+  },
+  chushi(){
+this.setData({
       img:[]
     })
     app.mpServerless.db.collection('active').find({},{
@@ -40,7 +50,8 @@ Page({
         res.result.map(item=>{
           const obj={
             url:item.urls[0],
-            title:item.title
+            title:item.title,
+            id:item._id,
           }
           img.push(obj)
         })
@@ -70,10 +81,14 @@ Page({
       })
     })
   },
-  
     onskip(){
       my.navigateTo({
-        url: '../../pages/active/active'
+        url: '../active/active'
+      });
+    },
+    onactive(e){
+       my.navigateTo({
+        url: '../activevalue/activevalue?id='+e.target.dataset.id
       });
     }
 });

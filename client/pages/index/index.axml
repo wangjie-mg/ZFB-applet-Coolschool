@@ -9,7 +9,7 @@
     autoplay="{{autoplay}}">
     <block a:for="{{img}}">
       <swiper-item>
-        <image src="{{item.url}}"  class="img" />
+        <image src="{{item.url}}" data-id="{{item.id}}" class="img" onTap="onactive"/>
       </swiper-item>
     </block>
   </swiper>

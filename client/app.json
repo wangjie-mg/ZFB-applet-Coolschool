@@ -15,9 +15,10 @@
   ],
   "window": {
     "defaultTitle": "Cool校园",
+    "allowsBounceVertical":"NO",
     "titleBarColor": "#014A96",
-    "transparentTitle": "none",
-    "allowsBounceVertical": "NO"
+    "transparentTitle": "none"
+    
   },
   "tabBar": {
     "textColor": "#cccccc",

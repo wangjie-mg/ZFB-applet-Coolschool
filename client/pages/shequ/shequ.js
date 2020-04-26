@@ -85,6 +85,13 @@ onShow(){
       this.mySchedulde();
     
   },
+  onPullDownRefresh() {
+      this.onsign();
+      this.setData({
+        nshow:false,
+      })
+      my.stopPullDownRefresh()
+  },
   
   onsign(){
       this.setData({

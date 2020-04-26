@@ -11,7 +11,6 @@ const mpServerless =  new MPServerless({
     endpoint: 'https://api.bspapp.com'
 });
 cloud.init(mpServerless);
-
 App({
     userId:null,
     userInfo:null,
@@ -44,14 +43,11 @@ App({
           result="刚刚";
           return result;
     },
-  async login(){
-    my.showLoading({
+    sign(){
+      my.showLoading({
       content: '正在登陆...'
-    });
-    const res = await mpServerless.user.authorize({
-      authProvider: 'alipay_openapi'
-    });
-    mpServerless.user.getInfo().then(user => {
+      });
+      mpServerless.user.getInfo().then(user => {
       this.userId = user.result.user.userId;   
       my.getAuthUserInfo({
           success: resava => {
@@ -62,7 +58,7 @@ App({
             .then(res => {
               if(res.result.length === 0){
                 mpServerless.db.collection('users').insertOne({
-                  userid:user.result.user.userId,
+                  userid:this.userId,
                   ava:resava.avatar,
                   name: resava.nickName,
                   studentid:"未填写",
@@ -72,39 +68,30 @@ App({
               }
               if(resava.avatar !== res.result[0].ava || resava.nickName !==res.result[0].name){
                 mpServerless.db.collection('users').updateOne({
-                    userid:user.result.user.userId
+                    userid:this.userId
                 }, {
                    $set: {
                     ava:resava.avatar,
                     name:resava.nickName
                   }               
-                })
-                .then(res => {
-                  console.log("修改成功")
                 })
                 .catch(console.error)
                 mpServerless.db.collection('write').updateMany({
-                    userid:user.result.user.userId
+                    userid:this.userId
                 }, {
                    $set: {
                     ava:resava.avatar,
                     name:resava.nickName
                   }               
-                })
-                .then(res => {
-                  console.log("修改成功")
                 })
                 .catch(console.error)
                 mpServerless.db.collection('comment').updateMany({
-                    userid:user.result.user.userId
+                    userid:this.userId
                 }, {
                    $set: {
                     ava:resava.avatar,
                     name:resava.nickName
                   }               
-                })
-                .then(res => {
-                  console.log("修改成功")
                 })
                 .catch(console.error)
               }
@@ -113,6 +100,23 @@ App({
           }
       });
     }).catch(console.error);
-    my.hideLoading();
+      my.hideLoading();
+    },
+    login(){
+      
+     mpServerless.user.authorize({
+      authProvider: 'alipay_openapi'
+      }).then(res =>{this.sign()})
+      .catch(res  =>{
+        my.alert({
+          title: '亲',
+          content: '必须授权登录才可以正常使用小程序服务,',
+          buttonText: '我知道了',
+          success: () => {
+          my.startPullDownRefresh()
+
+      }
+        });
+      })
   },
 });

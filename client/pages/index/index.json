@@ -1,4 +1,6 @@
 {
+  "pullRefresh": true,
+    "allowsBounceVertical":"YES",
   "usingComponents": {
     "avatar": "mini-ali-ui/es/avatar/index",
     "flex": "mini-ali-ui/es/flex/index",
